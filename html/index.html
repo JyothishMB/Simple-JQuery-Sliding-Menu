@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Menu</title>
+		<style type="text/css">
+		.inline { 
+		display: inline-block; 
+		border: 1px solid red; 
+		margin:10px;
+		box-shadow: 5px 5px grey;
+		padding:5px;
+		}
+		.subItems { 
+		border: 1px solid black; 
+		margin:10px;
+		display:none;
+		padding:5px;
+		border: 1px solid red; 
+		}
+		.visibleItems{
+
+		}
+		.hiddenItems{
+
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('#options').click(function () {
+					if($("#subItemsGallery").is(':hidden'))
+						$('#subItemsOptions').slideToggle();
+					else {
+						$('#subItemsOptions').slideToggle();
+						$('#subItemsGallery').slideUp();
+					}
+						
+				});
+				$('#gallery').click(function () {
+					if ($("#subItemsOptions").is(':hidden'))
+						$('#subItemsGallery').slideToggle();
+					else {
+						$('#subItemsGallery').slideToggle();
+						$('#subItemsOptions').slideUp();
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h2>Menu</h2>
+			<div id="home" class="inline">Home</div>
+			<div id="options" class="inline">Options</div>
+			<div id="gallery" class="inline">Gallery</div>
+			<div id="contact" class="inline">Contact Us</div>
+			<div id="subItemsGallery" class="subItems">
+				<div>My photos</div>
+				<div>Automobiles</div>
+				<div>Travel</div>
+			</div>
+			<div id="subItemsOptions" class="subItems">
+				<div>Option1</div>
+				<div>Option2</div>
+				<div>Option3</div>
+			</div>
+	</body>
+</html>
